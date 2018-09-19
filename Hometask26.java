@@ -4,36 +4,41 @@ public class Hometask26 {
 	public static void main(String[] args) {
 		int b = getRandomX();
 		System.out.println("Длина массива " + b);
-//			System.out.print("Массив ");
-//			
-			int [] array = {1, 2, 3, 4, 5};
-//			for (int i=0; i<array.length; i++){
-//
-//				array [i] = getRandomX();
+			System.out.print("Массив ");
+			
+			int [] array = new int [b];
+			for (int i=0; i<array.length; i++){
+
+				array [i] = getRandomX();
 				
-				System.out.print(array[i] + " ");
-			}
-			System.out.println(" ");
+				System.out.print(array[i] + " ");}
+			
+			System.out.println( );
 			int max= array[0];
 			int min= array[0];
 		
 			int pozmax = 0;
-			int pozmax2 = 0;
 			int pozmin = 0;
-			int pozmin2 = 0;
 			
 			for (int i=0; i<array.length; i++){
 				if (array[i]>max) {max = array[i];
 				pozmax = i;
 				}
-				else if (array[i] == max) {max = array[i];
-				pozmax2 = i;
 				
 				else if (array[i]<min) {min = array[i];
 				pozmin = i;}
 				
 				
 			}
+			for (int i=0; i<array.length; i++){
+				if ((pozmax>pozmin)&(array[i]==max)) {max = array[i];
+				pozmax = i;
+				}
+			}
+			for (int i=0; i<array.length; i++){
+			if ((pozmax<pozmin)&(array[i]==min)) {min = array[i];
+			pozmin = i;
+			}}
 			System.out.println(max);
 			System.out.println(min);
 			System.out.println( "Максимальное " + max + " на позиции " + pozmax + ", минимальное " + min + " на позиции " + pozmin);
